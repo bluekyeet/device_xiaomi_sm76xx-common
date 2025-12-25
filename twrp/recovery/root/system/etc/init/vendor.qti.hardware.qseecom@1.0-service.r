@@ -1,0 +1,16 @@
+#
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+#
+
+on init
+    start vendor.qseecomd
+
+service vendor.qseecomd /system/bin/qseecomd
+    class core
+    user root
+    group root drmrpc
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64:/sbin
+    seclabel u:r:recovery:s0
