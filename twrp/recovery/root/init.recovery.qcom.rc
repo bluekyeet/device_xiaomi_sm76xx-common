@@ -75,6 +75,7 @@ on property:twrp.modules.loaded=true
 
 on property:twrp.all.users.decrypted=true
     stop weaver_nxp
+    stop keymint-strongbox
     stop authsecret_default
     stop secure_element
     umount /mnt/vendor/persist
@@ -85,5 +86,6 @@ on property:servicemanager.ready=true
 
 on property:vendor.sys.listeners.registered=true
     start weaver_nxp
+    start keymint-strongbox
     start authsecret_default
     start secure_element
