@@ -1,6 +1,9 @@
 on init
     start vendor.qseecomd
 
+on property:init.svc.vendor.qseecomd=running
+    setprop vendor.qseecomd.ready 1
+
 service vendor.qseecomd /vendor/bin/qseecomd
     socket notify-topology stream 660 system drmrpc
     class core

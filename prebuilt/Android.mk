@@ -8,10 +8,12 @@ include $(CLEAR_VARS)
     LOCAL_POST_INSTALL_CMD += \
         mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/vendor; \
         cp -rf $(LOCAL_PATH)/vendor $(TARGET_RECOVERY_ROOT_OUT)/; \
+        mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware; \
         mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware_mnt/image; \
-        cp -a $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware/* $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware_mnt/image/; \
         mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/odm/firmware/p16u; \
-        cp -a $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware/* $(TARGET_RECOVERY_ROOT_OUT)/odm/firmware/p16u/; \
+        cp -a $(LOCAL_PATH)/vendor/firmware/* $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware/; \
+        cp -a $(LOCAL_PATH)/vendor/firmware/* $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware_mnt/image/; \
+        cp -a $(LOCAL_PATH)/vendor/firmware/* $(TARGET_RECOVERY_ROOT_OUT)/odm/firmware/p16u/; \
         echo "Calling depmod on miui_prebuilt"; \
         $(DEPMOD) -b $(TARGET_RECOVERY_ROOT_OUT)/vendor 1.1;
 include $(BUILD_PHONY_PACKAGE)
