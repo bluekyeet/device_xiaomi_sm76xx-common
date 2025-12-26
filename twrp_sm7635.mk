@@ -10,8 +10,9 @@ DEVICE_PATH := device/xiaomi/sm7635
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 ## Device identifier
-PRODUCT_DEVICE := sm7635
-PRODUCT_NAME := twrp_sm7635
+PRODUCT_PLATFORM := volcano
+PRODUCT_DEVICE := amethyst
+PRODUCT_NAME := amethyst
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
@@ -19,5 +20,3 @@ PRODUCT_MANUFACTURER := Xiaomi
 TW_STATUS_ICONS_ALIGN := center
 TW_Y_OFFSET := 116
 TW_H_OFFSET := -116
-
-PRODUCT_PLATFORM := volcano
