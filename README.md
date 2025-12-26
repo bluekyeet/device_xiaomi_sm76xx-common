@@ -19,13 +19,12 @@ The Xiaomi Redmi Note 14 Pro+ 5G (codenamed _"amethyst"_) is a smartphone from X
 mkdir twrp && cd twrp
 repo init --depth=1 -u https://github.com/TWRP-Test/platform_manifest_twrp_aosp.git -b twrp-16.0
 repo sync
-git clone --depth=1 https://github.com/bluekyeet/device_xiaomi_amethyst-twrp device/xiaomi/amethyst
-git clone --depth=1 https://github.com/bluekyeet/device_xiaomi_sm76xx-common device/xiaomi/sm76xx-common
+git clone --depth=1 https://github.com/bluekyeet/device_xiaomi_sm76xx-common device/xiaomi/sm7635
 ```
 
 ```
 source build/envsetup.sh
-lunch twrp_amethyst-bp2a-eng
+lunch twrp_sm7635-bp2a-eng
 make recoveryimage
 ```
 
