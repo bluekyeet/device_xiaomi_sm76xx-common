@@ -1,4 +1,4 @@
-on init
+on property:vendor.qseecomd.ready=1
     start vendor.weaver-service
 
 service vendor.weaver-service /vendor/bin/hw/android.hardware.weaver-service
@@ -7,3 +7,4 @@ service vendor.weaver-service /vendor/bin/hw/android.hardware.weaver-service
     group root drmrpc
     setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/odm/lib64:/system/lib64:/sbin
     seclabel u:r:recovery:s0
+    disabled

@@ -1,4 +1,4 @@
-on init
+on property:vendor.qseecomd.ready=1
     start vendor.secure_element
 
 service vendor.secure_element /vendor/bin/hw/android.hardware.secure_element-service.qti
@@ -7,3 +7,4 @@ service vendor.secure_element /vendor/bin/hw/android.hardware.secure_element-ser
     group nfc root
     setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/odm/lib64:/system/lib64:/sbin
     seclabel u:r:recovery:s0
+    disabled
