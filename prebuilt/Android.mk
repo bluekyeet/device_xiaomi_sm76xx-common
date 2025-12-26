@@ -13,11 +13,5 @@ include $(CLEAR_VARS)
     LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)
     LOCAL_POST_INSTALL_CMD += \
         mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/lib/firmware; \
-        cp -rf $(LOCAL_PATH)/lib/firmware/* $(TARGET_RECOVERY_ROOT_OUT)/lib/firmware/; \
-        if [ -d $(LOCAL_PATH)/lib/firmware/p16u ]; then \
-            mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware_mnt/image; \
-            cp -rf $(LOCAL_PATH)/lib/firmware/p16u/* $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware_mnt/image/; \
-            mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/odm/firmware/p16u; \
-            cp -rf $(LOCAL_PATH)/lib/firmware/p16u/* $(TARGET_RECOVERY_ROOT_OUT)/odm/firmware/p16u/; \
-        fi;
+        cp -rf $(LOCAL_PATH)/lib/firmware/* $(TARGET_RECOVERY_ROOT_OUT)/lib/firmware/;
 include $(BUILD_PHONY_PACKAGE)
