@@ -2,6 +2,21 @@
 TWRP Tree for the Redmi Note 14 Pro+ 5G
 The Xiaomi Redmi Note 14 Pro+ 5G (codenamed _"amethyst"_) is a smartphone from Xiaomi.
 
+## TODO
+- File decryption
+- Touchscreen
+- Vibration
+- Lag fix
+- Wi-Fi
+
+## Working
+- ADB
+- Fastbootd
+- Display
+- OTG
+- idk
+
+
 ## Device specifications
 | Device       | Xiaomi Redmi Note 14 Pro+                              |
 | -----------: | :-------------------------------------------------- |
