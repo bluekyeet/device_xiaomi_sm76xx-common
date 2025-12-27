@@ -25,15 +25,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-service touch_report /system/bin/touch_report_debug
-    class hal
-    user root
-    group root uhid input
-    capabilities SYS_NICE
-    ioprio rt 4
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64:/sbin:/odm/lib64:/odm/lib64/hw
-    disabled
-    seclabel u:r:recovery:s0
+on early-fs
+    write /proc/sys/walt/sched_lib_name "recovery,magiskboot,Updater,updater,update_engine_sideload"
+    write /proc/sys/walt/sched_lib_mask_force 255
 
 on init
     start vendor.boot-qti
@@ -75,7 +69,7 @@ on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=tru
 
 on property:twrp.variant.files_copied=1
     start odm.vibratorfeature-hal-service
-    start touch_report
+    start odm.touch_report
 
 on property:servicemanager.ready=true
     setprop sys.boot_completed 1
