@@ -380,6 +380,9 @@ subsystem mem_buf_vm
 /dev/assd                 0660    nfc         nfc
 /dev/st21nfc              0777    nfc         nfc
 
+# eSE permissions
+/dev/st54spi_gpio         0660   system     system
+
 # UIO devices
 /dev/uio0                 0660   system     system
 /dev/uio1                 0660   system     system
