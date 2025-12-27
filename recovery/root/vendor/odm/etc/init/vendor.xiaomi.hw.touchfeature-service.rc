@@ -121,7 +121,7 @@ service touchfeature-service /odm/bin/hw/vendor.xiaomi.hw.touchfeature-service
     seclabel u:r:recovery:s0
 
 
-service toucheventcheck /odm/bin/hw/toucheventcheck
+service toucheventcheck /odm/bin/toucheventcheck
     class main
     user root
     group root
