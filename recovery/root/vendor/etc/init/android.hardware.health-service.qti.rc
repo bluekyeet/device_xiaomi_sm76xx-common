@@ -4,6 +4,7 @@ service vendor.health-default /vendor/bin/hw/android.hardware.health-service.qti
     group root
     capabilities WAKE_ALARM BLOCK_SUSPEND
     file /dev/kmsg w
+    interface aidl android.hardware.health.IHealth/default
     disabled
     setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/odm/lib64:/system/lib64:/sbin
     seclabel u:r:recovery:s0

@@ -153,6 +153,10 @@ RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 TARGET_RECOVERY_DEVICE_MODULES += libexpat
 RECOVERY_LIBRARY_SOURCE_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libexpat.so
 
+# Required by /vendor/bin/hw/android.hardware.health-service.qti in recovery
+TARGET_RECOVERY_DEVICE_MODULES += android.hardware.health-V2-ndk
+RECOVERY_LIBRARY_SOURCE_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.health-V2-ndk.so
+
 TARGET_OTA_ASSERT_DEVICE := amethyst
 
 # Fastbootd

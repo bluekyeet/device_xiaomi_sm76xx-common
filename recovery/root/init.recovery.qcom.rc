@@ -53,6 +53,10 @@ on post-fs
 on boot
     setprop sys.usb.config adb
 
+    # Start health HAL early so clients don't spam lazy-start attempts.
+    wait /sys/class/power_supply/battery
+    start vendor.health-default
+
 on property:twrp.modules.loaded=true
     # Mount firmware
     mkdir /firmware
@@ -60,8 +64,6 @@ on property:twrp.modules.loaded=true
     # Load ADSP firmware for PMIC
     wait /sys/kernel/boot_adsp/ssr
     write /sys/kernel/boot_adsp/ssr 1
-    wait /sys/class/power_supply/battery
-    start vendor.health-default
     umount /firmware
 
 on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=true

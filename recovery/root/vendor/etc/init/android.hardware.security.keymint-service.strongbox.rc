@@ -1,6 +1,3 @@
-on property:vendor.qseecomd.ready=1
-    start vendor.keymint-strongbox
-
 service vendor.keymint-strongbox /vendor/bin/hw/android.hardware.security.keymint-service.strongbox-thales
     class early_hal
     user root
