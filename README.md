@@ -14,7 +14,7 @@ The Xiaomi Redmi Note 14 Pro+ 5G (codenamed _"amethyst"_) is a smartphone from X
 - Fastbootd
 - Display
 - OTG
-- idk
+- Nothing else
 
 
 ## Device specifications
