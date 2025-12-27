@@ -62,6 +62,9 @@ on property:twrp.modules.loaded=true
     write /sys/kernel/boot_adsp/ssr 1
     wait /sys/class/power_supply/battery
     start vendor.health-default
+    # Best-effort: load NFC/eSE modules so StrongBox/Weaver/eSE can function
+    # (modules are expected to live on vendor_dlkm/vendor/odm, not in ramdisk)
+    exec u:r:recovery:s0 root root -- /system/bin/busybox sh -c 'for m in stm_st54se_gpio.ko stm_nfc_i2c.ko nxp-nci.ko; do for d in /vendor_dlkm/lib/modules /vendor_dlkm/lib/modules/* /vendor_dlkm/lib/modules/*/* /vendor/lib/modules /vendor/lib/modules/* /odm/lib/modules /odm/lib/modules/*; do [ -f "$d/$m" ] && /system/bin/busybox insmod "$d/$m" >/dev/null 2>&1 && break; done; done'
     umount /firmware
 
 on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=true
