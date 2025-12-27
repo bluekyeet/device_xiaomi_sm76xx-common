@@ -176,7 +176,6 @@
         }
       ]
     },
-// MIUI ADD: Performance_SpeedUI
     {
       "Name": "MISFPerformance",
       "Actions": [
@@ -190,7 +189,6 @@
         }
       ]
     },
-// END Performance_SpeedUI
     {
       "Name": "RealtimePerformance",
       "Actions": [
@@ -466,7 +464,6 @@
           }
         ]
       },
-// MIUI ADD: Performance_SpeedUI
     {
       "Name": "ProcessCapacityMISF",
       "Actions": [
@@ -480,7 +477,6 @@
         }
       ]
     },
-// END Performance_SpeedUI
     {
       "Name": "ServiceCapacityLow",
       "Actions": [
@@ -749,7 +745,6 @@
         }
       ]
     },
-    // MIUI ADD: Performance_MemoryEnhance
     {
       "Name": "MemoryProtectedProcess",
       "Actions": [
@@ -776,7 +771,6 @@
         }
       ]
     }
-    // END Performance_MemoryEnhance
   ],
 
   "AggregateProfiles": [
